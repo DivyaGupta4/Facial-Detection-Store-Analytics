@@ -128,31 +128,31 @@ while True:
     temp_json_face_no = {
             "fac_no" : str(len(faces))}
     # send number of faces to loggly
-    r = requests.post('https://logs-01.loggly.com/inputs/1e2fe7cc-d54b-4c14-a284-275bd284f49b/tag/python', json=temp_json_face_no)
+    r = requests.post('https://logs-01.loggly.com/inputs/my_token/tag/python', json=temp_json_face_no)
 
 
     for emo in all_emotions:
         if emo == "sad":
             temp_json["Emotion_actual"] = "Sad"
             log.info(json.dumps(temp_json))
-            r = requests.post('https://logs-01.loggly.com/inputs/1e2fe7cc-d54b-4c14-a284-275bd284f49b/tag/python', json=temp_json)
+            r = requests.post('https://logs-01.loggly.com/inputs/my_token/tag/python', json=temp_json)
         elif emo == "happy":
             temp_json["Emotion_actual"] = "Happy"
             log.info(json.dumps(temp_json))
-            r = requests.post('https://logs-01.loggly.com/inputs/1e2fe7cc-d54b-4c14-a284-275bd284f49b/tag/python', json=temp_json)
+            r = requests.post('https://logs-01.loggly.com/inputs/my_token/tag/python', json=temp_json)
         elif emo == "neutral":
             temp_json["Emotion_actual"] = "Neutral"
             log.info(json.dumps(temp_json))
-            r = requests.post('https://logs-01.loggly.com/inputs/1e2fe7cc-d54b-4c14-a284-275bd284f49b/tag/python', json=temp_json)
+            r = requests.post('https://logs-01.loggly.com/inputs/my_token/tag/python', json=temp_json)
         elif emo == "surprise":
             temp_json["Emotion_actual"]="Surprised"
             log.info(json.dumps(temp_json))
-            r = requests.post('https://logs-01.loggly.com/inputs/1e2fe7cc-d54b-4c14-a284-275bd284f49b/tag/python', json=temp_json)
+            r = requests.post('https://logs-01.loggly.com/inputs/my_token/tag/python', json=temp_json)
         # r is sending emotions observed to loggly
         
     for gen in age_gender_list:
         temp_json_gender["gend"]=gen[0]
-        r = requests.post('https://logs-01.loggly.com/inputs/1e2fe7cc-d54b-4c14-a284-275bd284f49b/tag/python', json=temp_json_gender)
+        r = requests.post('https://logs-01.loggly.com/inputs/my_token/tag/python', json=temp_json_gender)
         # Sending the gender to loggly
         
         
